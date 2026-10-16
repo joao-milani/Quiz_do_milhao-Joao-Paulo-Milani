@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz do Milhão</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="tema-claro">
+  <div class="lacos-fundo" aria-hidden="true"><span>🎀</span><span>🎀</span><span>🎀</span><span>🎀</span><span>🎀</span><span>🎀</span><span>🎀</span><span>🎀</span><span>🎀</span><span>🎀</span><span>🎀</span><span>🎀</span></div>
+  <main class="jogo">
+    <header class="cabecalho">
+      <div>
+        <p class="sobretitulo">DESAFIO DE CONHECIMENTO</p>
+        <h1>🎀 Quiz do Milhão</h1>
+      </div>
+      <div class="controles-topo"><button type="button" id="alternar-musica" class="botao-musica" aria-pressed="false">♫ Música: ligar</button><button type="button" id="alternar-tema" class="botao-tema" aria-label="Alternar tema">🌙</button></div>
+    </header>
+
+    <section class="tela-inicial" id="tela-inicial">
+      <div class="icone">🎀</div>
+      <h2>Bem-vindo ao Quiz do Milhão!</h2>
+      <p>Digite seu nome para participar do desafio.</p>
+      <form id="form-entrada">
+        <input type="text" id="nome-usuario" placeholder="Seu nome de usuário" maxlength="20" required autocomplete="nickname">
+        <button type="submit" class="botao-proxima">Começar a jogar 💸</button>
+      </form>
+      <button type="button" id="ver-podio" class="ajuda">🏆 Ver pódio</button>
+    </section>
+
+    <section class="painel" id="painel" hidden>
+      <div class="topo-jogo">
+        <div>
+          <span class="rotulo">JOGADOR</span>
+          <strong id="nome-atual">Jogador</strong>
+        </div>
+        <div class="placar">
+          <span class="rotulo">PRÊMIO ATUAL</span>
+          <strong id="premio">R$ 0</strong>
+        </div>
+      </div>
+      <div class="status">
+        <span id="numero-pergunta">Pergunta 1 de 10</span>
+        <span id="categoria">Conhecimentos gerais</span>
+      </div>
+      <div class="barra-fundo"><div id="barra-progresso"></div></div>
+      <h2 id="pergunta">A pergunta aparecerá aqui.</h2>
+      <div id="alternativas" class="alternativas"></div>
+      <p id="mensagem" class="mensagem" aria-live="polite"></p>
+      <div class="botoes-ajuda">
+        <button type="button" id="dobrar" class="ajuda">💰 Dobrar prêmio</button>
+        <button type="button" id="pular" class="ajuda">⏭️ Pular pergunta</button>
+        <button type="button" id="eliminar" class="ajuda">✂️ Eliminar duas</button>
+        <button type="button" id="desistir" class="ajuda perigo">🏳️ Desistir</button>
+      </div>
+      <button type="button" id="proxima" class="botao-proxima" hidden>Próxima pergunta ➜</button>
+    </section>
+
+    <section class="resultado" id="resultado" hidden>
+      <div class="icone">🏆</div>
+      <h2 id="titulo-resultado">Fim de jogo!</h2>
+      <p id="texto-resultado"></p>
+      <p id="jogador-final" class="linha-resultado"></p>
+      <p id="premio-final" class="premio-final">R$ 0</p>
+      <p id="colocacao-final" class="linha-resultado"></p>
+      <div class="acoes-resultado">
+        <button type="button" id="ver-podio-final" class="ajuda">🏆 Ver pódio</button>
+        <button type="button" id="reiniciar" class="botao-proxima">Jogar novamente</button>
+        <button type="button" id="inicio-final" class="ajuda">Voltar ao início</button>
+      </div>
+    </section>
+
+    <section class="podio" id="podio" hidden>
+      <div class="icone">🏆</div>
+      <h2>Hall da Fama</h2>
+      <p>Os três melhores resultados salvos neste navegador.</p>
+      <div class="podio-lista" id="podio-lista"></div>
+      <button type="button" id="voltar-inicio" class="botao-proxima">Voltar ao início</button>
+    </section>
+    <footer>Seu progresso no pódio fica salvo neste navegador.</footer>
+  </main>
+</body>
+</html>
